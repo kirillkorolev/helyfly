@@ -1,0 +1,320 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 7px;
+  position: relative;
+}
+
+.form__label::after {
+  position: absolute;
+  content: "*";
+  top: -1px;
+  right: -8px;
+  font-size: 16px;
+  line-height: 20px;
+  color: $dark-red;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+
+  &--date {
+    margin-bottom: 10px;
+    position: relative;
+
+    .form__input {
+      padding-right: 50px;
+    }
+  }
+
+  &--email,
+  &--name,
+  &--surname,
+  &--phone {
+    margin-bottom: 10px;
+  }
+
+  &--validity {
+    width: 50%;
+
+    .form__input {
+      border-top: none;
+      border-left: none;
+      border-right: 1px solid $grey;
+      border-bottom: 1px solid $grey;
+    }
+  }
+
+  &--cvv {
+    width: 50%;
+
+    .form__input {
+      border: none;
+      border-bottom: 1px solid $grey;
+    }
+  }
+
+  &--card-number {
+    width: 100%;
+
+    .form__input {
+      border: none;
+      border-bottom: 1px solid $grey;
+    }
+  }
+}
+
+.form__date-button {
+  @include reset-button;
+
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border-radius: 3px;
+  border: 0.5px solid $grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 14px;
+  bottom: 10px;
+}
+
+.form__calendar-icon {
+  color: $orange;
+}
+
+.form__date-button:hover,
+.form__date-button:focus {
+  border-color: $black;
+}
+
+.form__date-button:hover .form__calendar-icon,
+.form__date-button:focus .form__calendar-icon {
+  color: $red;
+}
+
+.form__date-button:active {
+  opacity: 0.7;
+}
+
+.form__input:hover,
+.form__input:focus {
+  outline: none;
+  border-color: $black;
+  border-bottom: 1px solid $black;
+}
+
+.form__input {
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 13px 20px 12px;
+  border-radius: 3px;
+  border: 1px solid $grey;
+
+  &--error {
+    border-color: $red;
+  }
+}
+
+.form__input--error:focus {
+  border-color: $red;
+}
+
+.form__input::placeholder {
+  font-size: 16px;
+  line-height: 20px;
+  color: $grey;
+}
+
+.form__card-details-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid $grey;
+  border-bottom: none;
+  border-radius: 3px;
+}
+
+.form__confirmation-text {
+  font-size: 16px;
+  line-height: 20px;
+  width: 350px;
+}
+
+.form__confirmation {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form__checkbox {
+  margin-right: 13px;
+  width: 20px;
+  height: 20px;
+}
+
+.form__checkbox:hover .form__checkbox-label::before {
+  border-color: $dark-orange;
+}
+
+
+.form__submit-button {
+  @include reset-button;
+
+  display: inline-block;
+  vertical-align: top;
+  width: 390px;
+  text-align: center;
+  background-color: $orange;
+  color: $white;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 27px 20px 25px;
+  border-radius: 3px;
+}
+
+.form__submit-button:hover,
+.form__submit-button:focus {
+  background-color: $dark-orange;
+}
+
+.form__submit-button:active {
+  opacity: 0.7;
+}
+
+.form__button-wrap {
+  text-align: center;
+}
+
+.form__checkbox-label {
+  position: relative;
+}
+
+.form__checkbox-label::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1px solid $orange;
+  left: 3px;
+  top: 1px;
+  background-color: transparent;
+}
+
+.form__checkbox-input:checked + .form__checkbox-label::before {
+  background-color: $orange;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(252, 155, 9, 0.6);
+  cursor: pointer;
+}
+
+.form__checkbox-input:checked + .form__checkbox-label::after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 7px;
+  background-size: 10px 7px;
+  background-image: url("../img/icons/icon-white-check.svg");
+  top: 5px;
+  left: 6px;
+  cursor: pointer;
+}
+
+.form__checkbox-input:focus + .form__checkbox-label::before {
+  border-color: $dark-orange;
+}
+
+.form__checkbox-input--error + .form__checkbox-label::before {
+  border-color: $red;
+}
+
+.form__checkbox-input--error:focus + .form__checkbox-label::before {
+  border-color: $red;
+}
+
+.form__checkbox-input--error:checked + .form__checkbox-label::before {
+  border-color: $orange;
+}
+
+.form__card-details {
+  margin-bottom: 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: $mobile-width) {
+  .form__submit-button {
+    width: 250px;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 18px 15px 16px;
+  }
+
+  .form__label {
+    margin-bottom: 11px;
+  }
+
+  .form__item {
+    &--surname {
+      margin-bottom: 17px;
+    }
+
+    &--phone {
+      .form__label {
+        margin-bottom: 8px;
+      }
+
+      margin-bottom: 18px;
+    }
+
+    &--validity {
+      width: 100%;
+
+      .form__input {
+        border-right: none;
+      }
+    }
+
+    &--cvv {
+      width: 100%;
+    }
+  }
+
+  .form__card-details-wrap {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .form__card-details {
+    margin-bottom: 28px;
+
+    .form__label {
+      margin-bottom: 13px;
+    }
+  }
+
+  .form__confirmation-text {
+    width: 70%;
+  }
+
+  .form__checkbox {
+    width: 16px;
+    height: 16px;
+    margin-right: 9px;
+  }
+
+  .form__date-button {
+    right: 11px;
+    bottom: 11px;
+  }
+}

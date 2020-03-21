@@ -1,0 +1,219 @@
+.page-footer__logo-link {
+  color: $dark-black;
+  display: block;
+}
+
+.page-footer__logo-link:hover,
+.page-footer__logo-link:focus {
+  color: $dark-orange;
+}
+
+.page-footer__logo-link:active {
+  opacity: 0.7;
+}
+
+.page-footer__upper-part {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 96px 41px;
+  margin: 0 auto;
+  align-items: flex-end;
+}
+
+.page-footer__language-button {
+  @include reset-button;
+
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.page-footer__language-type {
+  margin-right: 6px;
+}
+
+.page-footer__button-icon {
+  width: 11px;
+  height: 1px;
+  display: block;
+  position: relative;
+}
+
+.page-footer__button-icon::before,
+.page-footer__button-icon::after {
+  position: absolute;
+  content: "";
+  width: 7px;
+  height: 1px;
+  background-color: $grey;
+  top: 0;
+}
+
+.page-footer__button-icon::before {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+.page-footer__button-icon::after {
+  right: 0;
+  transform: rotate(-45deg);
+}
+
+
+.page-footer__language-button:hover,
+.page-footer__language-button:focus {
+  color: $dark-black;
+}
+
+.page-footer__language-button:hover .page-footer__button-icon::before,
+.page-footer__language-button:hover .page-footer__button-icon::after,
+.page-footer__language-button:focus .page-footer__button-icon::before,
+.page-footer__language-button:focus .page-footer__button-icon::after {
+  background-color: $dark-black;
+}
+
+.page-footer__language-button:active {
+  opacity: 0.7;
+}
+
+.page-footer__wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.page-footer__lower-part {
+  background-color: $pale-light-grey;
+}
+
+.page-footer__lower-wrap {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2px 96px 31px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  line-height: 17px;
+  color: $light-grey;
+}
+
+.page-footer__lower-central-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-footer__tech-support {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.page-footer__support-phone {
+  color: $light-grey;
+}
+
+.page-footer__support-phone:hover,
+.page-footer__support-phone:focus {
+  color: $navy;
+}
+
+.page-footer__support-phone:active {
+  opacity: 0.7;
+}
+
+.page-footer__payment-types {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  margin-right: 25.5%;
+}
+
+.page-footer__payment-variant {
+  margin-right: 20px;
+
+  &--paypal {
+    display: none;
+  }
+}
+
+.page-footer__payment-link {
+  height: 27px;
+  display: block;
+}
+
+.page-footer__support-slogan {
+  margin-right: 5px;
+}
+
+@media (max-width: $mobile-width) {
+  .page-footer__upper-part {
+    padding: 0 4.86% 24px;
+    align-items: center;
+    border-bottom: 0.5px solid $light-grey;
+  }
+
+  .page-footer__lower-wrap {
+    padding: 23px 4.86% 20px;
+  }
+
+  .page-footer__lower-central-wrap {
+    align-items: center;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  .page-footer__logo-icon {
+    width: 84px;
+    height: 15px;
+  }
+
+  .page-footer__logo-link {
+    height: 17px;
+  }
+
+  .page-footer__wrapper {
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .page-footer__language-button {
+    position: absolute;
+    right: 0;
+    top: 79px;
+  }
+
+  .page-footer__lower-part {
+    background-color: $white;
+  }
+
+  .page-footer__payment-variant {
+    margin-right: 16px;
+
+    &--paypal {
+      display: block;
+    }
+
+    &--mastercard {
+      width: 34px;
+      height: 21px;
+    }
+
+    &--visa {
+      width: 33px;
+      height: 23px;
+    }
+  }
+
+  .page-footer__payment-types {
+    margin-bottom: 24px;
+  }
+
+  .page-footer__tech-support {
+    margin-bottom: 10px;
+  }
+}

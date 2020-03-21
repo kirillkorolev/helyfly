@@ -1,0 +1,238 @@
+.timetable__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  margin: 0 0 26px;
+}
+
+.timetable__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px 82px;
+}
+
+.timetable__table {
+  max-width: 770px;
+  width: 100%;
+  border: 1px solid $grey;
+}
+
+.timetable__head-line {
+  font-size: 18px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  padding: 19px 30px 15px;
+}
+
+.timetable__date {
+  margin-right: 20px;
+}
+
+.timetable__weekday {
+  margin-right: 3px;
+}
+
+.timetable__date-button {
+  @include reset-button;
+
+  width: 35px;
+  height: 35px;
+  border: 0.5px solid $pale-grey;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timetable__icon-calendar {
+  color: $pale-grey;
+}
+
+.timetable__date-button:hover,
+.timetable__date-button:focus {
+  border-color: $black;
+}
+
+.timetable__date-button:hover .timetable__icon-calendar,
+.timetable__date-button:focus .timetable__icon-calendar {
+  color: $black;
+}
+
+.timetable__date-button:active {
+  opacity: 0.7;
+}
+
+.timetable__time-period,
+.timetable__availability {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.timetable__time-period {
+  margin-bottom: 9px;
+}
+
+.timetable__price {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 6px;
+
+  &--mobile {
+    display: none;
+  }
+}
+
+.timetable__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.timetable__afternoon,
+.timetable__evening {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 0.5px solid $grey;
+  padding: 20px 30px;
+}
+
+.timetable__select-button {
+  @include reset-button;
+
+  color: $orange;
+  line-height: 17px;
+  font-weight: 500;
+  display: inline-block;
+  vertical-align: top;
+  width: 129px;
+  text-align: center;
+  padding: 16px;
+  border: 2px solid $orange;
+  border-radius: 3px;
+}
+
+.timetable__select-button:hover,
+.timetable__select-button:focus {
+  border-color: $dark-orange;
+  color: $dark-orange;
+}
+
+.timetable__select-button:active {
+  opacity: 0.7;
+}
+
+.timetable__raiting {
+  display: flex;
+  align-items: center;
+  padding: 48px 30px 41px;
+}
+
+.timetable__icon-champ {
+  margin-right: 9px;
+}
+
+.timetable__raiting-text {
+  margin-right: 15px;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.timetable__stars {
+  display: flex;
+  align-items: center;
+}
+
+.timetable__icon-star {
+  color: $orange;
+  margin-right: 7px;
+}
+
+.timetable__raiting-wrap {
+  display: flex;
+}
+
+@media (max-width: $mobile-width) {
+  .timetable__title {
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0 0 37px;
+  }
+
+  .timetable__container {
+    padding: 38px 4.86% 45px;
+  }
+
+  .timetable__date-button {
+    display: none;
+  }
+
+  .timetable__date {
+    margin-right: 0;
+  }
+
+  .timetable__head-line {
+    justify-content: center;
+    padding: 17px 30px 15px;
+  }
+
+  .timetable__weekday {
+    margin-right: 5px;
+  }
+
+  .timetable__afternoon,
+  .timetable__evening {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 29px 19px;
+  }
+
+  .timetable__evening {
+    border-bottom: 0.5px solid $grey;
+  }
+
+  .timetable__price {
+    margin-bottom: 7px;
+
+    &--mobile {
+      display: block;
+    }
+
+    &--desktop {
+      display: none;
+    }
+  }
+
+  .timetable__column {
+    margin-bottom: 21px;
+  }
+
+  .timetable__select-button {
+    padding: 16px 16px 13px;
+  }
+
+  .timetable__raiting-text {
+    font-size: 13px;
+    line-height: 19px;
+    margin-right: 0;
+  }
+
+  .timetable__raiting-wrap {
+    flex-direction: column;
+  }
+
+  .timetable__icon-champ {
+    width: 35px;
+    height: 39px;
+    flex-shrink: 1;
+    margin-right: 14px;
+  }
+
+  .timetable__raiting {
+    padding: 33px 15px 28px 18px;
+  }
+}

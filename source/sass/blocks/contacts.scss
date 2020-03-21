@@ -1,0 +1,486 @@
+.contacts__map {
+  width: 100%;
+  height: 509px;
+  display: block;
+}
+
+.contacts__interactive-map {
+  width: 100%;
+  height: 509px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+}
+
+.contacts {
+  position: relative;
+}
+
+.contacts__faq {
+  width: 420px;
+  border: 1px solid $grey;
+  background-color: $white;
+  position: absolute;
+  top: 20px;
+  left: 20.31%;
+  padding: 51px 30px 53px;
+  z-index: 10;
+}
+
+.contacts__list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 41px;
+}
+
+.contacts__point {
+  font-weight: 700;
+  font-size: 35px;
+  color: $white;
+  background-color: $orange;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 61px;
+  line-height: 61px;
+  margin-right: 18px;
+}
+
+.contacts__item {
+  display: flex;
+  align-items: center;
+}
+
+.contacts__item:not(:last-child) {
+  margin-bottom: 34px;
+}
+
+.contacts__wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts__question {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 33px;
+}
+
+.contacts__answer {
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.contacts__author-details {
+  display: flex;
+  flex-direction: column;
+  width: 279px;
+}
+
+.contacts__name {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 3px;
+}
+
+.contacts__work-type {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contacts__info-button {
+  @include reset-button;
+
+  font-weight: 500;
+  line-height: 21px;
+  color: $blue;
+  display: inline-block;
+  vertical-align: top;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.contacts__info-button:hover,
+.contacts__info-button:focus {
+  color: $navy;
+}
+
+.contacts__info-button:active {
+  opacity: 0.7;
+}
+
+.contacts__photo {
+  display: block;
+  width: 67px;
+  height: 67px;
+  margin-right: 10px;
+}
+
+.contacts__author {
+  display: flex;
+}
+
+.contacts__arrow-button {
+  display: none;
+}
+
+.contacts__info-button-desktop-text {
+  display: none;
+}
+
+.contacts__work-text {
+  margin: 0;
+  font-size: 16px;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.contacts__point-button {
+  @include reset-button;
+
+  position: absolute;
+  top: 203px;
+  left: 80%;
+  z-index: 11;
+  width: 30px;
+  height: 30px;
+  background-color: $white;
+  border: 5px solid $red;
+  border-radius: 50%;
+}
+
+.contacts__point-button span {
+  position: relative;
+}
+
+.contacts__point-button span::after {
+  position: absolute;
+  content: "";
+  bottom: -45px;
+  right: -8px;
+  border: 9px solid transparent;
+  border-top: 24px solid $red;
+  border-right: 0 solid $red;
+}
+
+.contacts__point-button:hover,
+.contacts__point-button:focus {
+  border-color: $dark-red;
+}
+
+.contacts__point-button:hover span::after,
+.contacts__point-button:focus span::after {
+  border-top-color: $dark-red;
+}
+
+.contacts__point-button:active {
+  opacity: 0.7;
+}
+
+.contacts__point-button:hover .contacts__icon-point,
+.contacts__point-button:focus .contacts__icon-point {
+  color: $dark-red;
+}
+
+.contacts__message {
+  &--hidden {
+    display: none;
+  }
+
+  position: absolute;
+  top: 130px;
+  left: 75%;
+  background-color: $white;
+  border-radius: 3px;
+  padding: 10px 10px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.contacts__message::after {
+  position: absolute;
+  content: "";
+  bottom: -20px;
+  left: 30px;
+  border: 10px solid transparent;
+  border-top: 10px solid $white;
+}
+
+.contacts__text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  margin-right: 10px;
+}
+
+.contacts__message-close {
+  @include reset-button;
+
+  width: 19px;
+  height: 19px;
+  display: block;
+}
+
+.contacts__message-close span {
+  position: relative;
+}
+
+.contacts__message-close span::before,
+.contacts__message-close span::after {
+  position: absolute;
+  content: "";
+  width: 15px;
+  height: 1px;
+  background-color: $grey;
+  top: 0;
+  left: -7px;
+}
+
+.contacts__message-close span::before {
+  transform: rotate(-45deg);
+}
+
+.contacts__message-close span::after {
+  transform: rotate(45deg);
+}
+
+.contacts__message-close:hover span::before,
+.contacts__message-close:focus span::before,
+.contacts__message-close:hover span::after,
+.contacts__message-close:focus span::after {
+  background-color: $black;
+}
+
+.contacts__message-close:active {
+  opacity: 0.7;
+}
+
+.contacts__dots-list {
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .contacts__point-button {
+    top: 190px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contacts__faq {
+    position: relative;
+    left: 0;
+
+    width: 85.629%;
+    margin: 0 auto;
+    padding: 51px 0 0;
+  }
+
+  .contacts__map {
+    height: 423px;
+    margin-bottom: 32px;
+  }
+
+  .contacts__interactive-map {
+    height: 423px;
+  }
+
+  .contacts__point {
+    margin-right: 0;
+    width: 66px;
+    height: 66px;
+    margin-bottom: 18px;
+  }
+
+  .contacts__wrap {
+    align-items: center;
+    margin-right: 7px;
+  }
+
+  .contacts__question {
+    font-size: 16px;
+    line-height: 23px;
+
+    margin-bottom: 5px;
+  }
+
+  .contacts__answer {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .contacts__name {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+  }
+
+  .contacts__work-type {
+    font-size: 14px;
+    line-height: 21px;
+    margin-bottom: 3px;
+  }
+
+  .contacts__list {
+    position: relative;
+    display: block;
+    min-height: 150px;
+    width: 200px;
+    padding-left: 8px;
+    margin: 0 auto 4px;
+  }
+
+  .contacts__item {
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1s;
+
+    &--showing-slide {
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+
+  .contacts__arrow-button {
+    @include reset-button;
+
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    width: 10px;
+    height: 19px;
+    top: 80px;
+
+    &--next {
+      right: 15px;
+    }
+
+    &--previous {
+      left: 26px;
+    }
+  }
+
+  .contacts__arrow-button span {
+    position: relative;
+    width: 10px;
+    height: 19px;
+    display: block;
+  }
+
+  .contacts__arrow-button span::before,
+  .contacts__arrow-button span::after {
+    position: absolute;
+    content: "";
+    width: 9px;
+    height: 2px;
+    background-color: $grey;
+  }
+
+  .contacts__arrow-button--next span::before {
+    transform: rotate(45deg);
+    top: 5px;
+    right: 0;
+  }
+
+  .contacts__arrow-button--next span::after {
+    transform: rotate(-45deg);
+    bottom: 6px;
+    right: 0;
+  }
+
+  .contacts__arrow-button--previous span::before {
+    transform: rotate(-45deg);
+    top: 5px;
+    left: 0;
+  }
+
+  .contacts__arrow-button--previous span::after {
+    transform: rotate(45deg);
+    bottom: 6px;
+    left: 0;
+  }
+
+  .contacts__arrow-button:hover span::before,
+  .contacts__arrow-button:focus span::before,
+  .contacts__arrow-button:hover span::after,
+  .contacts__arrow-button:focus span::after {
+    background-color: $black;
+  }
+
+  .contacts__arrow-button:active {
+    opacity: 0.7;
+  }
+
+  .contacts__item:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .contacts__author {
+    width: 212px;
+    margin: 0 auto 12px;
+    justify-content: space-between;
+  }
+
+  .contacts__photo {
+    margin-right: 0;
+  }
+
+  .contacts__author-details {
+    width: 134px;
+  }
+
+  .contacts__info-button {
+    text-align: left;
+  }
+
+  .contacts__info-button-desktop-text {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .contacts__message {
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .contacts__work-text {
+    font-size: 14px;
+  }
+
+  .contacts__dots-list {
+    @include reset-list;
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .contacts__dot-item {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border: 0.5px solid $light-grey;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 5px;
+
+    &--active {
+      background-color: $orange;
+      border-color: $orange;
+      cursor: auto;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.modal {
+  position: absolute;
+  top: 230px;
+  left: 49.9%;
+  transform: translateX(-50%);
+  z-index: 200;
+  border-radius: 6px;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  padding: 3.1% 98px 3.22% 97px;
+  max-width: 615px;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--visible {
+    display: flex;
+    animation-name: show;
+    animation-duration: 0.25s;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.modal__title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 33px;
+  margin: 0 0 24px;
+}
+
+.modal__close-button {
+  @include reset-button;
+
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: block;
+  top: 22px;
+  right: 24px;
+}
+
+.modal__close-button span {
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: relative;
+}
+
+.modal__close-button span::before,
+.modal__close-button span::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 2px;
+  background-color: $light-grey;
+  top: 8px;
+  left: 0;
+}
+
+.modal__close-button span::before {
+  transform: rotate(-45deg);
+}
+
+.modal__close-button span::after {
+  transform: rotate(45deg);
+}
+
+.modal__close-button:hover span::before,
+.modal__close-button:focus span::before,
+.modal__close-button:hover span::after,
+.modal__close-button:focus span::after {
+  background-color: $black;
+}
+
+.modal__close-button:active {
+  opacity: 0.7;
+}
+
+@media (max-width: $mobile-width) {
+  .modal {
+    left: 50%;
+    width: 90.63%;
+    padding: 48px 3% 36px 3.45%;
+  }
+
+  .modal__title {
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 29px;
+  }
+
+  .modal__close-button {
+    top: 17px;
+    right: 16px;
+  }
+}

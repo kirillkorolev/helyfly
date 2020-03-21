@@ -310,7 +310,7 @@
       return false;
     } else {
       input.setCustomValidity("");
-      if (input.classList.contains(errorClass)) {
+      if (input.classList.contains("form__checkbox-input--error")) {
         input.classList.remove("form__checkbox-input--error");
       }
       return true;
